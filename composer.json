@@ -1,0 +1,32 @@
+{
+    "name": "viachviach/storage-bundle",
+    "type": "storage",
+    "description": "Storage of helpful things",
+    "keywords": ["storagre"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "psalm/plugin-symfony": "^1.4",
+        "phpstan/phpstan": "^0.12.33",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "ViachViach\\Storage\\": "src"
+        }
+    },
+    "scripts": {
+        "check": {
+            "codestyle": "@codestyle",
+            "static-analysis": "@static-analysis"
+        },
+        "codestyle": "@php vendor/bin/phpcs",
+        "static-analysis": {
+            "phpstan": "@php vendor/bin/phpstan analyse -c phpstan.neon",
+            "psalm": "@php vendor/bin/psalm"
+        }
+    },
+    "minimum-stability":  "dev"
+}
